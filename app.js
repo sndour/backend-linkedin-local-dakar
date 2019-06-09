@@ -26,5 +26,6 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 
 app.use('/payit', paiementRoutes);
+app.use('/ipn', paiementRoutes);
 
 module.exports = app;

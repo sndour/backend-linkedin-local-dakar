@@ -45,6 +45,9 @@ exports.payit = (req, res, next) => {
     headers: headers
     })
     .then(function (response) {
+        res.status(201).json({
+            message: response
+        });
     return response.json()
     })
     .then(function (jsonResponse) {
@@ -57,7 +60,6 @@ exports.payit = (req, res, next) => {
 
     */
     })
-
 
             res.status(201).json({
                 message: 'Paiement created successfully'
@@ -95,7 +97,7 @@ exports.ipn = (req, res, next) => {
     }
     else{
         //not from PayExpresse
-        console.log('not ok');
+        console.log('not ok du toutu');
     }
-  
+     
 }
