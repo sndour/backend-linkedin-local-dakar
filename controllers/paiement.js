@@ -45,9 +45,7 @@ exports.payit = (req, res, next) => {
     headers: headers
     })
     .then(function (response) {
-        res.status(201).json({
-            message: response
-        });
+       
     return response.json()
     })
     .then(function (jsonResponse) {
@@ -59,11 +57,13 @@ exports.payit = (req, res, next) => {
       token:"98b1c97af00c8b2a92f2"}
 
     */
+
+   res.status(201).json({
+    message: jsonResponse
+});
     })
 
-            res.status(201).json({
-                message: 'Paiement created successfully'
-            });
+
         }
     ).catch((error) => {
         res.status(400).json({
