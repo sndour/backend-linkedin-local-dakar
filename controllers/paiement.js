@@ -55,9 +55,7 @@ exports.payit = (req, res, next) => {
 
     let headers1 = {
         Accept: "text/html",
-        'Content-Type': "text/html",
-        API_KEY:"bc92c04b8d2cadaa245bad9f4931aee0f6c5735c4ce5b409e5534314d58cc6b0",
-        API_SECRET:"51d161b68d4d047c354f8906e2d6c9df72bf33f4758d64d900d8ba595a78cf92",
+        'Content-Type': "text/html"
         };
         checkoutUrl = "https://preview.payexpresse.com/payment/checkout/"+jsonResponse.token;
         fetch(checkoutUrl, {
@@ -77,6 +75,10 @@ exports.payit = (req, res, next) => {
    res.status(201).json({
     message: response1
 });
+    }).catch((error) => {
+        res.status(400).json({
+            error: error
+        });
     })
 
 
