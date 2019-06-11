@@ -24,8 +24,8 @@ exports.payit = (req, res, next) => {
     command_name:"Paiement Linkedin Local Dakar via PayExpresse",
     env:"test",
     ipn_url:"https://linkedinlocal.com/ipn",
-    success_url:"https://domaine.com/success",
-    cancel_url:"https://domaine.com/cancel",
+    success_url:"https://linkedinlocaldakar.com",
+    cancel_url:"https://linkedinlocaldakar.com",
     custom_field:JSON.stringify({
        custom_fiel1:"value_1",
        custom_fiel2:"value_2",
