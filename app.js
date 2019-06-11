@@ -25,6 +25,6 @@ app.use((req, res, next) => {
 });
 app.use(bodyParser.json());
 
-app.use('/', paiementRoutes);
+app.use('/api', paiementRoutes);
 
 module.exports = app;

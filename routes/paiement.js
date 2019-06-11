@@ -4,6 +4,6 @@ const payCtrl = require('../controllers/paiement');
 
 router.post('/payit', payCtrl.payit);
 router.post('/ipn', payCtrl.ipn);
-router.get('/checkout', payCtrl.checkout);
+router.post('/checkout', payCtrl.checkout);
 
 module.exports = router;
