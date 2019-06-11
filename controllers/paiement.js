@@ -53,17 +53,7 @@ exports.payit = (req, res, next) => {
 
     console.log(jsonResponse);
 
-    let headers1 = {
-        Accept: "text/html",
-        'Content-Type': "text/html"
-        };
-        checkoutUrl = "https://preview.payexpresse.com/payment/checkout/"+jsonResponse.token;
-        fetch(checkoutUrl, {
-            method:'GET',
-            headers: headers1
-            }).then((response1)=>{
-                console.log(response1);
-            })
+   
     /*
     {
         "success":1,
@@ -73,12 +63,8 @@ exports.payit = (req, res, next) => {
     */
 
    res.status(201).json({
-    message: response1
+    message: jsonResponse
 });
-    }).catch((error) => {
-        res.status(400).json({
-            error: error
-        });
     })
 
 
@@ -90,6 +76,27 @@ exports.payit = (req, res, next) => {
     })
 
 };
+
+exports.checkout = (req, res, next) =>{
+
+    let headers1 = {
+        Accept: "text/html",
+        'Content-Type': "text/html"
+        };
+        //checkoutUrl = "https://preview.payexpresse.com/payment/checkout/"+jsonResponse.token;
+        fetch(checkoutUrl, {
+            method:'GET',
+            headers: headers1
+            }).then((response1)=>{
+                console.log(response1);
+            }).then((response)=>{
+                console.log(response);
+                res.status(201).json({
+                    response
+                });
+            })
+
+}
 
 
 exports.ipn = (req, res, next) => {
