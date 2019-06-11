@@ -78,7 +78,7 @@ exports.payit = (req, res, next) => {
 };
 
 exports.checkout = (req, res, next) =>{
-
+    let fetch = require('node-fetch');
     let headers1 = {
         Accept: "text/html",
         'Content-Type': "text/html"
