@@ -82,13 +82,13 @@ exports.payit = (req, res, next) => {
 };
 
 exports.checkout = (req, res, next) =>{
-    console.log(req.checkoutUrl);
+    console.log(req.body.checkoutUrl);
     let headers1 = {
         Accept: "text/html",
         'Content-Type': "text/html"
         };
         //checkoutUrl = "https://preview.payexpresse.com/payment/checkout/"+jsonResponse.token;
-        fetch(req.checkoutUrl, {
+        fetch(req.body.checkoutUrl, {
             method:'GET',
             headers: headers1
             }).then((response1)=>{
