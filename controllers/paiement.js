@@ -17,7 +17,7 @@ exports.payit = (req, res, next) => {
     let paymentRequestUrl = "https://payexpresse.com/api/payment/request-payment";
     let fetch = require('node-fetch');// http client
     let params = {
-    item_name:"ticket",
+    item_name:"Ticket",
     item_price:req.body.price,
     currency:"XOF",
     ref_command:paiement._id,
