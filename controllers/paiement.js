@@ -24,7 +24,7 @@ exports.payit = (req, res, next) => {
     currency:"XOF",
     ref_command:paiement._id,
     command_name:"Paiement Linkedin Local Dakar via PayExpresse",
-    env:"test",
+    env:"prod",
     ipn_url:"https://linkedinlocal.com/ipn",
     success_url:"https://linkedinlocaldakar.com",
     cancel_url:"https://linkedinlocaldakar.com",
@@ -54,7 +54,7 @@ exports.payit = (req, res, next) => {
     .then(function (jsonResponse) {
 
     
-    jsonResponse["redirect_url"]="https://preview.payexpresse.com/payment/checkout/"+jsonResponse.token;
+    //jsonResponse["redirect_url"]="https://preview.payexpresse.com/payment/checkout/"+jsonResponse.token;
     console.log(jsonResponse);
 
    
