@@ -1,6 +1,8 @@
 const Paiement = require('../models/paiement');
+const fetch = require('node-fetch');
 
-exports.payit = (req, res) => {
+
+exports.payit = (req, res, next) => {
     const paiement = new Paiement({
         prenom: req.body.prenom,
         nom: req.body.nom,
@@ -15,7 +17,7 @@ exports.payit = (req, res) => {
 
 
     let paymentRequestUrl = "https://payexpresse.com/api/payment/request-payment";
-    let fetch = require('node-fetch');// http client
+   // http client
     let params = {
     item_name:"Ticket",
     item_price:req.body.price,
@@ -79,9 +81,8 @@ exports.payit = (req, res) => {
 
 };
 
-exports.checkout = (req, res) =>{
-    console.log(req);
-    let fetch = require('node-fetch');
+exports.checkout = (req, res, next) =>{
+    console.log(req.checkoutUrl);
     let headers1 = {
         Accept: "text/html",
         'Content-Type': "text/html"
@@ -102,7 +103,7 @@ exports.checkout = (req, res) =>{
 }
 
 
-exports.ipn = (req, res) => {
+exports.ipn = (req, res, next) => {
     console.log('notification');
     let type_event = req.body.type_event;
     let custom_field = JSON.parse(req.body.custom_field);
