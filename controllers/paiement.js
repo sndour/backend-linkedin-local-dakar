@@ -91,8 +91,6 @@ exports.checkout = (req, res, next) =>{
         fetch(req.body.checkoutUrl, {
             method:'GET',
             headers: headers1
-            }).then((response1)=>{
-                console.log(response1);
             }).then((response)=>{
                 console.log(response);
                 res.status(201).json({
