@@ -1,6 +1,6 @@
 const Paiement = require('../models/paiement');
 
-exports.payit = (req, res, next) => {
+exports.payit = (req, res) => {
     const paiement = new Paiement({
         prenom: req.body.prenom,
         nom: req.body.nom,
@@ -79,8 +79,8 @@ exports.payit = (req, res, next) => {
 
 };
 
-exports.checkout = (req, res, next) =>{
-
+exports.checkout = (req, res) =>{
+    console.log(req);
     let fetch = require('node-fetch');
     let headers1 = {
         Accept: "text/html",
@@ -102,7 +102,7 @@ exports.checkout = (req, res, next) =>{
 }
 
 
-exports.ipn = (req, res, next) => {
+exports.ipn = (req, res) => {
     console.log('notification');
     let type_event = req.body.type_event;
     let custom_field = JSON.parse(req.body.custom_field);
