@@ -124,7 +124,7 @@ exports.ipn = (req, res, next) => {
     let my_api_key = 'bc92c04b8d2cadaa245bad9f4931aee0f6c5735c4ce5b409e5534314d58cc6b0';
     let my_api_secret = '51d161b68d4d047c354f8906e2d6c9df72bf33f4758d64d900d8ba595a78cf9';
 
-    if(SHA256(my_api_secret) === api_secret_sha256 && SHA256(my_api_key) === api_key_sha256)
+    if(sha256(my_api_secret) === api_secret_sha256 && sha256(my_api_key) === api_key_sha256)
     {
         //from PayExpresse
         console.log('ok', custom_field);
