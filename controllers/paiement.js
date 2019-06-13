@@ -85,11 +85,11 @@ exports.checkout = (req, res, next) =>{
     console.log(req.body.checkoutUrl);
     let headers1 = {
         Accept: "text/html",
-        'Content-Type': "text/html"
+        'accept': "text/html"
         };
         //checkoutUrl = "https://preview.payexpresse.com/payment/checkout/"+jsonResponse.token;
         fetch(req.body.checkoutUrl, {
-            method:'GET',
+            method:'POST',
             headers: headers1
             }).then((response)=>{
                 console.log(response);
