@@ -135,6 +135,8 @@ exports.ipn = (req, res, next) => {
     {
         //from PayExpresse
         console.log('ok', custom_field);
+        Paiement.findOneAndUpdate({ "_id" : ref_command },
+        { $set: { "paid" : true}})
     }
     else{
         //not from PayExpresse
