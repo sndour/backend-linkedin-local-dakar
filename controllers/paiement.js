@@ -74,9 +74,9 @@ exports.payit = (req, res, next) => {
 
     */
 
-   res.status(201).json({
+   res.send(
     jsonResponse
-});
+);
     })
 
 
