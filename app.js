@@ -3,7 +3,7 @@ const bodyParser = require ('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: false }))
 
 const paiementRoutes = require('./routes/paiement');
 
