@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 
 exports.payit = (req, res, next) => {
     console.log(req.body);
+    console.log('content apres req.body');
     let price;
     if (req.body.offer_id === 1) {
         price = 20000;
