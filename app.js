@@ -3,7 +3,7 @@ const bodyParser = require ('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
-
+app.use(bodyParser.urlencoded());
 
 const paiementRoutes = require('./routes/paiement');
 
@@ -24,7 +24,7 @@ app.use((req, res, next) => {
     next();
 });
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+
 app.use('/api', paiementRoutes);
 
 module.exports = app;
