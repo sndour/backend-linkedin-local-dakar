@@ -60,7 +60,7 @@ exports.payit = (req, res, next) => {
     })
     .then(function (jsonResponse) {
 
-        jsonResponse["redirect_url"]="https://www.payexpresse.com/payment/checkout/"+jsonResponse.token;
+        jsonResponse["redirectUrl"]="https://www.payexpresse.com/payment/checkout/"+jsonResponse.token;
 
     //jsonResponse["redirect_url"]="https://www.payexpresse.com/payment/checkout/"+jsonResponse.token;
     console.log(jsonResponse);
