@@ -26,7 +26,7 @@ exports.payit = (req, res, next) => {
    // http client
     let params = {
     item_name:"Ticket",
-    item_price:req.body.price,
+    item_price:paiement.price,
     currency:"XOF",
     ref_command:paiement._id,
     command_name:"Paiement Linkedin Local Dakar via PayExpresse",
