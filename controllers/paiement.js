@@ -6,7 +6,7 @@ exports.payit = (req, res, next) => {
     console.log(req.body);
     console.log('content apres req.body');
     let price;
-    if (req.body.offer_id === 1) {
+    if (req.body.offer_id == 1) {
         price = 20000;
     } else {
         price = 30000;
@@ -134,6 +134,5 @@ exports.ipn = (req, res, next) => {
         //not from PayExpresse
         console.log('not ok du toutu');
     }
-     res.send('top');
 
 }
