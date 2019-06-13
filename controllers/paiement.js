@@ -3,8 +3,9 @@ const fetch = require('node-fetch');
 
 
 exports.payit = (req, res, next) => {
+    console.log(req);
     let price;
-    if (req.offer_id === 1) {
+    if (req.body.offer_id === 1) {
         price = 20000;
     } else {
         price = 30000;
@@ -60,7 +61,7 @@ exports.payit = (req, res, next) => {
     .then(function (jsonResponse) {
 
     
-    jsonResponse["redirect_url"]="https://www.payexpresse.com/payment/checkout/"+jsonResponse.token;
+    //jsonResponse["redirect_url"]="https://www.payexpresse.com/payment/checkout/"+jsonResponse.token;
     console.log(jsonResponse);
 
    
