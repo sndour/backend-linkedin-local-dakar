@@ -110,6 +110,7 @@ exports.checkout = (req, res, next) =>{
 exports.ipn = (req, res, next) => {
     console.log('notification');
     let type_event = req.body.type_event;
+    console.log('donne du req.body.custo_field', requ.body.custom_field);
     let custom_field = JSON.parse(req.body.custom_field);
     let ref_command = req.body.ref_command;
     let item_name = req.body.item_name;
