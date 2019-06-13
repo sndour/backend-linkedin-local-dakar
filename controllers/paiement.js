@@ -94,7 +94,7 @@ exports.checkout = (req, res, next) =>{
             }).then((response)=>{
                 console.log(response);
                 res.status(201).json({
-                    response
+                    response 
                 });
             })
 
