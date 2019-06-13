@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 
 exports.payit = (req, res, next) => {
-    console.log(req);
+    console.log(req.body);
     let price;
     if (req.body.offer_id === 1) {
         price = 20000;
