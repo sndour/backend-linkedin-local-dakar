@@ -3,12 +3,18 @@ const fetch = require('node-fetch');
 
 
 exports.payit = (req, res, next) => {
+    let price;
+    if (req.offer_id === 1) {
+        price = 20000;
+    } else {
+        price = 30000;
+    }
     const paiement = new Paiement({
         prenom: req.body.prenom,
         nom: req.body.nom,
         email: req.body.email,
         tel: req.body.tel,
-        price: req.body.price,
+        price: price,
         paid: false
     });
     paiement.save().then(
