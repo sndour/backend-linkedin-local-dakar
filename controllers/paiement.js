@@ -89,7 +89,7 @@ exports.checkout = (req, res, next) =>{
         };
         //checkoutUrl = "https://preview.payexpresse.com/payment/checkout/"+jsonResponse.token;
         fetch(req.body.checkoutUrl, {
-            method:'POST',
+            method:'GET',
             headers: headers1
             }).then((response)=>{
                 console.log(response);
