@@ -36,10 +36,7 @@ exports.payit = (req, res, next) => {
     ipn_url:"https://linkedinlocal.com/api/ipn",
     success_url:"https://linkedinlocaldakar.com",
     cancel_url:"https://linkedinlocaldakar.com",
-    custom_field:JSON.stringify({
-       custom_fiel1:"value_1",
-       custom_fiel2:"value_2",
-    })
+    custom_field:JSON.stringify(req.body)
     };
 
     let headers = {
@@ -130,7 +127,7 @@ exports.ipn = (req, res, next) => {
     if(SHA256Encrypt(my_api_secret) === api_secret_sha256 && SHA256Encrypt(my_api_key) === api_key_sha256)
     {
         //from PayExpresse
-        console.log('ok');
+        console.log('ok', custom_field);
     }
     else{
         //not from PayExpresse
