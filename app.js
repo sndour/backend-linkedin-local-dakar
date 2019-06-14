@@ -28,6 +28,5 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api', paiementRoutes);
-app.use('/e', emailRoutes);
 
 module.exports = app;
