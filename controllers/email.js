@@ -21,7 +21,7 @@ exports.sendEmail = (req, res, next) => {
       });
 
       let info = transporter.sendMail({
-        from: '"Linkedin Local Dakar (Le site Web) 👻" linkedinlocaldakar@gmail.com', // sender address
+        from: '"Linkedin Local Dakar (Le site Web) 👻" ndouradefemi@gmail.com', // sender address
         to: "stephane.ndour@gmail.com, contact@linkedinlocaldakar.com", // list of receivers
         subject: sujet, // Subject line
         //ext: , // plain text body
