@@ -12,8 +12,8 @@ exports.sendEmail = (req, res, next) => {
 
     let transporter = nodemailer.createTransport({
         host: "smtp.linkedinlocaldakar.com",
-        port: 465,
-        secure: true, // true for 465, false for other ports
+        port: 587,
+        secure: false, // true for 465, false for other ports
         auth: {
           user: 'contact@linkedinlocaldakar.com', // generated ethereal user
           pass: '@RhDc*k4' // generated ethereal password
