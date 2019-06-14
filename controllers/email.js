@@ -22,7 +22,7 @@ exports.sendEmail = (req, res, next) => {
 
       let info = transporter.sendMail({
         from: '"Linkedin Local Dakar (Le site Web) 👻" '+ email, // sender address
-        to: "stepĥane.ndour@gmail.com, contact@linkedinlocaldakar.com", // list of receivers
+        to: "stephane.ndour@gmail.com, contact@linkedinlocaldakar.com", // list of receivers
         subject: sujet, // Subject line
         //ext: , // plain text body
         html: "<b>"+message+"</b><br><br><p>Cet email est envoyé depuis le site web.</p>" // html body
