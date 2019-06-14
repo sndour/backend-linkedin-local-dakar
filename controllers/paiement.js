@@ -141,11 +141,9 @@ exports.ipn = (req, res, next) => {
     }
     else{
         //not from PayExpresse
-        console.log('not ok du toutu');
-        console.log('ok', custom_field);
-        Paiement.findOneAndUpdate({ "_id" : ref_command },
-        { $set: { "paid" : true}})
+        console.log('not ok');
+
     }
 
-    res.status(200).json({'ok':'ok'});
+    res.status(200);
 }
