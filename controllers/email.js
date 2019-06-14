@@ -31,6 +31,6 @@ exports.sendEmail = (req, res, next) => {
           console.log(error);
           res.send(error);
       });
-      res.send('ok');
+      res.json({"email":"ok"});
     
 }
