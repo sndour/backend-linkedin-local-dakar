@@ -25,6 +25,8 @@ exports.sendEmail = (req, res, next) => {
         //ext: , // plain text body
         html: "<b>"+message+"</b><br><br><p>Cet email est envoyé depuis le site web.</p>" // html body
       });
-    
+    if (info.messageId) {
+        res.send('ok');
+    } else { res.send('erreur')}
     
 }
