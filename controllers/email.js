@@ -11,12 +11,12 @@ exports.sendEmail = (req, res, next) => {
     //let testAccount = await nodemailer.createTestAccount();
 
     let transporter = nodemailer.createTransport({
-        host: "smtp.linkedinlocaldakar.com",
-        port: 25,
+        host: "in-v3.mailjet.com",
+        port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-          user: 'contact@linkedinlocaldakar.com', // generated ethereal user
-          pass: '@RhDc*k4' // generated ethereal password
+          user: '94f175d414e727097d3a09d5c1dc014b', // generated ethereal user
+          pass: '6b2458ddd64523b14b3fd12fe1f2c62c' // generated ethereal password
         }
       });
 
