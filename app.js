@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
+
 
 const paiementRoutes = require('./routes/paiement');
 const emailRoutes = require('./routes/email');
@@ -26,6 +26,7 @@ app.use((req, res, next) => {
     next();
 });
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api', paiementRoutes);
 app.use('/e', emailRoutes);
 
