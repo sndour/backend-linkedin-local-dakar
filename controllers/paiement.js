@@ -147,5 +147,5 @@ exports.ipn = (req, res, next) => {
         { $set: { "paid" : true}})
     }
 
-    res.status(200);
+    res.status(200).json({'ok':'ok'});
 }
