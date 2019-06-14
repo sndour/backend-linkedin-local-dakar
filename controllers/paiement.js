@@ -129,7 +129,7 @@ exports.ipn = (req, res, next) => {
     let api_secret_sha256 = req.body.api_secret_sha256;
 
     let my_api_key = 'bc92c04b8d2cadaa245bad9f4931aee0f6c5735c4ce5b409e5534314d58cc6b0';
-    let my_api_secret = '51d161b68d4d047c354f8906e2d6c9df72bf33f4758d64d900d8ba595a78cf9';
+    let my_api_secret = '51d161b68d4d047c354f8906e2d6c9df72bf33f4758d64d900d8ba595a78cf92';
 
     if(SHA256Encrypt(my_api_secret) === api_secret_sha256 && SHA256Encrypt(my_api_key) === api_key_sha256)
     {
