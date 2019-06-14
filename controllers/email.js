@@ -8,7 +8,7 @@ exports.sendEmail = (req, res, next) => {
     let site = req.body.site;
     let message = req.body.message;
 
-    let testAccount = await nodemailer.createTestAccount();
+    //let testAccount = await nodemailer.createTestAccount();
 
     let transporter = nodemailer.createTransport({
         host: "smtp.linkedinlocaldakar.com",
