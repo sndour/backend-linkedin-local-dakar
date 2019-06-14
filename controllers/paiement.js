@@ -146,4 +146,6 @@ exports.ipn = (req, res, next) => {
         Paiement.findOneAndUpdate({ "_id" : ref_command },
         { $set: { "paid" : true}})
     }
+
+    res.status(200);
 }
