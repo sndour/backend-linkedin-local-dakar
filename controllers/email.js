@@ -26,12 +26,11 @@ exports.sendEmail = (req, res, next) => {
         subject: sujet, // Subject line
         //ext: , // plain text body
         html: "<b>"+message+"</b><br><br><p>Cet email est envoyé depuis le site web par </p>"+email // html body
+       
       }).catch((error) =>{
           console.log(error);
           res.send(error);
       });
-    if (info.messageId) {
-        res.send('ok');
-    } else { res.send('erreur')}
+      res.send('ok');
     
 }
