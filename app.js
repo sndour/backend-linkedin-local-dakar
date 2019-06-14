@@ -6,6 +6,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }))
 
 const paiementRoutes = require('./routes/paiement');
+const emailRoutes = require('./routes/email');
 
 //app.use('/views/pages', express.static(path.join(__dirname, 'pages')));
 mongoose.connect('mongodb+srv://stephane:wWFowt3RgmzH27ni@cluster0-dirxl.mongodb.net/linkedinlocal?retryWrites=true', { useNewUrlParser: true})
@@ -26,5 +27,6 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 
 app.use('/api', paiementRoutes);
+app.use('/api', emailRoutes);
 
 module.exports = app;
