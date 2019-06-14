@@ -105,14 +105,14 @@ exports.checkout = (req, res, next) =>{
 
 }
 
-
+function SHA256Encrypt(password) {
+    let crypto = require('crypto');
+    let sha256 = crypto.createHash('sha256');
+    sha256.update(password);
+    return sha256.digest('hex');
+}
 exports.ipn = (req, res, next) => {
-    function SHA256Encrypt(password) {
-        let crypto = require('crypto');
-        let sha256 = crypto.createHash('sha256');
-        sha256.update(password);
-        return sha256.digest('hex');
-    }
+    
   
     console.log('notification');
     let type_event = req.body.type_event;
