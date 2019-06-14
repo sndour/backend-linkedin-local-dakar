@@ -10,7 +10,7 @@ exports.sendEmail = (req, res, next) => {
 
     let transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
-        port: 587,
+        port: 465,
         secure: false, // true for 465, false for other ports
         auth: {
           user: 'stephane.ndour@gmail.com', // generated ethereal user
