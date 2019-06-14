@@ -8,15 +8,15 @@ exports.sendEmail = (req, res, next) => {
     let site = req.body.site;
     let message = req.body.message;
 
-    //let testAccount = await nodemailer.createTestAccount();
+    let testAccount = await nodemailer.createTestAccount();
 
     let transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
+        host: "smtp.linkedinlocaldakar.com",
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-          user: 'stephane.ndour@gmail.com', // generated ethereal user
-          pass: 'Stephane123##' // generated ethereal password
+          user: 'contact@linkedinlocaldakar.com', // generated ethereal user
+          pass: '@RhDc*k4' // generated ethereal password
         }
       });
 
