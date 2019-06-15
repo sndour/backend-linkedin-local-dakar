@@ -33,8 +33,8 @@ exports.payit = (req, res, next) => {
     command_name:"Paiement Linkedin Local Dakar via PayExpresse",
     env:"test",
     ipn_url:"https://backend-linkedin-local-dakar.herokuapp.com/api/ipn",
-    success_url:"https://linkedinlocaldakar.com",
-    cancel_url:"https://linkedinlocaldakar.com",
+    success_url:"https://www.linkedinlocaldakar.com",
+    cancel_url:"https://www.linkedinlocaldakar.com",
     custom_field:JSON.stringify(req.body)
     };
 
@@ -136,8 +136,10 @@ exports.ipn = (req, res, next) => {
         //from PayExpresse
         console.log('ok', custom_field);
         console.log(ref_command);
-        Paiement.findOneAndUpdate({query : { "_id" : ref_command },
-        update : { $set: { "paid" : true}}})
+        // Paiement.findOneAndUpdate({query : { "_id" : ref_command },
+        // update : { $set: { "paid" : true}}});
+        
+        Paiement.updateOne({_id: ref_command}, {$set: {"paid": true}});
     }
     else{
         //not from PayExpresse
