@@ -139,7 +139,15 @@ exports.ipn = (req, res, next) => {
         // Paiement.findOneAndUpdate({query : { "_id" : ref_command },
         // update : { $set: { "paid" : true}}});
         
-        Paiement.updateOne({_id: ref_command}, {$set: {"paid": true}});
+        Paiement.updateOne({_id: ref_command}, {$set: {"paid": true}}).then(
+            (ok) => {
+                console.log('ok de la reponse', ok);
+            }
+        ).catch(
+            (error) => {
+                console.log(error);
+            }
+        );;
     }
     else{
         //not from PayExpresse
