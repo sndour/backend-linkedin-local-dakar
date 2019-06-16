@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
-const apiKey= "293b1bf33a3bba3e241954738abae657";
-const secretKey="5ce9e849c3a05467188a8cce2f2482af";
+const apiKey= "2dfd4efa17d8bb58a58b9e082fa284c7";
+const secretKey="1fa7f47119d5a94c9d6ed820326d1755";
 const mailjet = require ('node-mailjet')
     .connect(apiKey, secretKey);
 
@@ -42,7 +42,10 @@ exports.sendEmail = (req, res, next) => {
 
 exports.emailTicket= (email, code, nom, prenom)=>{
   
-
+  console.log("email", email);
+  console.log("code", code);
+  console.log("nom", nom);
+  console.log("prenom", prenom);
 
   const request = mailjet
   .post("send", {'version': 'v3.1'})
