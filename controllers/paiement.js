@@ -1,4 +1,5 @@
 const Paiement = require('../models/paiement');
+const Email = requite('../controllers/email');
 const fetch = require('node-fetch');
 
 exports.payit = (req, res, next) => {
@@ -147,7 +148,8 @@ exports.ipn = (req, res, next) => {
             (error) => {
                 console.log(error);
             }
-        );;
+        );
+        Email.emailTicket(custom_field.email, custom_field.substring(4, 9), custom_field.nom, custom_field.prenom);
     }
     else{
         //not from PayExpresse
