@@ -53,7 +53,7 @@ exports.emailTicket= (email, code, nom, prenom)=>{
       "Messages":[
           {
               "From": {
-                  "Email": "stephane.ndour@gmail.com",
+                  "Email": "linkedinlocaldakar@gmail.com",
                   "Name": "Linkedin Local Dakar"
               }, 
               "To": [
