@@ -80,7 +80,7 @@ exports.emailTicket= (email, code, nom, prenom)=>{
   })
 request
   .then((result) => {
-      console.log(result.body)
+      console.log("resultat email",result.body)
   })
   .catch((err) => {
       console.log(err.statusCode)
