@@ -1,5 +1,5 @@
 const Paiement = require('../models/paiement');
-const Email = requite('../controllers/email');
+const Email = require('../controllers/email');
 const fetch = require('node-fetch');
 
 exports.payit = (req, res, next) => {
