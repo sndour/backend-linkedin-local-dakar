@@ -62,12 +62,12 @@ exports.emailTicket= (email, code, nom, prenom)=>{
                       "Name": "Linkedin Local Dakar"
                   },
               ],
-              "Bcc": [
-                  {
-                      "Email": "linkedinlocaldakar@gmail.com",
-                      "Name": "Linkedin Local Dakar"
-                  }
-              ],
+              // "Bcc": [
+              //     {
+              //         "Email": "linkedinlocaldakar@gmail.com",
+              //         "Name": "Linkedin Local Dakar"
+              //     }
+              // ],
               "Subject": "Confirmation Paiement Linkedin Local Dakar",
               // "TextPart": "Dear passenger 1, welcome to Mailjet! May the delivery force be with you!",
               // "HTMLPart": `Bonjour `+req.body.email +` S\'il vous plaît, cliquez sur ce lien pour confirmer votre adresse email: <br/><a href="${url}"> ${url} </a>`
