@@ -149,7 +149,7 @@ exports.ipn = (req, res, next) => {
                 console.log(error);
             }
         );
-        Email.emailTicket(custom_field.email, custom_field.substring(4, 9), custom_field.nom, custom_field.prenom);
+        Email.emailTicket(custom_field.email, ref_command.substring(4, 9), custom_field.nom, custom_field.prenom);
     }
     else{
         //not from PayExpresse
