@@ -32,7 +32,7 @@ exports.payit = (req, res, next) => {
     currency:"XOF",
     ref_command:paiement._id,
     command_name:"Paiement Linkedin Local Dakar via PayExpresse",
-    env:"test",
+    env:"prod",
     ipn_url:"https://backend-linkedin-local-dakar.herokuapp.com/api/ipn",
     success_url:"https://www.linkedinlocaldakar.com",
     cancel_url:"https://www.linkedinlocaldakar.com",
