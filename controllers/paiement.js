@@ -17,7 +17,8 @@ exports.payit = (req, res, next) => {
         email: req.body.email,
         tel: req.body.tel,
         price: price,
-        paid: false
+        paid: false,
+        created: new Date(),
     });
     paiement.save().then(
         (paiement) => {
@@ -140,7 +141,7 @@ exports.ipn = (req, res, next) => {
         // Paiement.findOneAndUpdate({query : { "_id" : ref_command },
         // update : { $set: { "paid" : true}}});
         
-        Paiement.updateOne({_id: ref_command}, {$set: {"paid": true}}).then(
+        Paiement.updateOne({_id: ref_command}, {$set: {"paid": true, "modified": new Date()}}).then(
             (ok) => {
                 console.log('ok de la reponse', ok);
             }
