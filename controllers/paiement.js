@@ -162,7 +162,19 @@ exports.ipn = (req, res, next) => {
 }
 
 exports.payed = (req, res, next) => {
-    Paiement.find().then(
+    Paiement.find({paid: true}).then(
+        (payed) => {
+            res.status(200).json(payed);
+        }
+    ).catch((error) => {
+        res.status(400).json({
+            error: error
+        });
+    });
+}
+
+exports.notpayed = (req, res, next) => {
+    Paiement.find({paid: false}).then(
         (payed) => {
             res.status(200).json(payed);
         }
