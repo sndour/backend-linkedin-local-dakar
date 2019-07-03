@@ -8,8 +8,7 @@ exports.useradd = (req, res, next) => {
         (hash) => {
             const user = new User({
                 email: req.body.email,
-                password: hash,
-                confirmed: false
+                mdp: hash,
             });
             user.save().then(
                 ()=> {
@@ -17,7 +16,6 @@ exports.useradd = (req, res, next) => {
                     res.status(201).json({
                         message: 'Utilisateur créé'
                     });
-                    Email.confimation(req.body.email, user._id, bodyz);
                 }
                     ).catch(
                 (error) => {
