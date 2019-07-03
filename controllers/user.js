@@ -12,7 +12,6 @@ exports.useradd = (req, res, next) => {
             });
             user.save().then(
                 ()=> {
-
                     res.status(201).json({
                         message: 'Utilisateur créé'
                     });
