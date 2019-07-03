@@ -34,7 +34,7 @@ exports.login = (req, res, next) => {
                     error: "Cet utilisateur n'existe pas dans notre base de donnée."
                 });
             }
-            bcrypt.compare(req.body.password, user.mdp).then(
+            bcrypt.compare(req.body.mdp, user.mdp).then(
                 (valid) => {
                     if (!valid) {
                         return res.status(401).json({
