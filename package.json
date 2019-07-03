@@ -4,7 +4,7 @@
   "description": "backend pour gérer le paiement des places",
   "main": "server.js",
   "scripts": {
-    "postinstall": "electron-builder install-app-deps",
+    "postinstall": "npm rebuild bcrypt --update-binary",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
