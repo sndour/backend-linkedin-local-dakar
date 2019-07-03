@@ -160,3 +160,15 @@ exports.ipn = (req, res, next) => {
 
     res.send('ok');
 }
+
+exports.payed = (req, res, next) => {
+    Paiement.find().then(
+        (payed) => {
+            res.status(200).json(payed);
+        }
+    ).catch((error) => {
+        res.status(400).json({
+            error: error
+        });
+    });
+}

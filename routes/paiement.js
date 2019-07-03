@@ -6,7 +6,7 @@ const emailCtrl = require('../controllers/email');
 router.post('/payit', payCtrl.payit);
 router.post('/ipn', payCtrl.ipn);
 router.post('/checkout', payCtrl.checkout);
-
+router.get('/payement', payCtrl.payed);
 
 router.post('/email', emailCtrl.sendEmail);
 module.exports = router;
