@@ -11,7 +11,7 @@ router.get('/payed', payCtrl.payed);
 router.get('/notpayed', payCtrl.notpayed);
 
 router.post('/user', userCtrl.useradd);
-router.post('/user', userCtrl.login);
+router.post('/login', userCtrl.login);
 
 router.post('/email', emailCtrl.sendEmail);
 module.exports = router;
